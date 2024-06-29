@@ -1,37 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Age calculator app</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-
-  Day
-  DD
-
-  Month
-  MM
-
-  Year
-  YYYY
-
-  -- years
-  -- months
-  -- days
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Age calculator app</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <main>
+      <div class="input-section">
+        <label for="day">DAY</label>
+        <input type="number" name="day" id="day" />
+        <p class="date-error">This field is required</p>
+        <label for="month">MONTH</label>
+        <input type="number" id="month" />
+        <p class="month-error">This field is required</p>
+        <label for="year">YEAR</label>
+        <input type="number" name="year" id="year" />
+        <p class="year-error">This field is required</p>
+      </div>
+      <div class="button-section">
+        <div class="first-line"></div>
+        <button><img src="./assets/images/icon-arrow.svg" alt="" /></button>
+        <div class="second-line"></div>
+      </div>
+      <div class="results-section">
+        <p class="years-result"><span>38</span> years</p>
+        <p class="months-result"><span>3</span> months</p>
+        <p class="date-result"><span>26</span> days</p>
+      </div>
+    </main>
+  </body>
 </html>
