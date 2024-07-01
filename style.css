@@ -1,101 +1,57 @@
 * {
-  margin: 0;
   padding: 0;
+  margin: 0;
   box-sizing: border-box;
 }
 
-@font-face {
-  font-family: 'Poppins-Bold';
-  src: url(./assets/fonts/Poppins-Bold.ttf);
-  font-family: 'Poppins-Bold-Italic';
-  src: url(./assets/fonts/Poppins-BoldItalic.ttf);
-  font-family: 'Poppins-Extra-Bold';
-  src: url(./assets/fonts/Poppins-ExtraBold.ttf);
-  font-family: 'Poppins-Extra-Bold-Italic';
-  src: url(./assets/fonts/Poppins-ExtraBoldItalic.ttf);
-  font-family: 'Poppins-Italic';
-  src: url(./assets/fonts/Poppins-Italic.ttf);
-  font-family: 'Poppins-Regular';
-  src: url(./assets/fonts/Poppins-Regular.ttf);
-}
-
 :root {
-  --purple: hsl(259, 100%, 65%);
-  --light-red: hsl(0, 100%, 67%);
-  --white: hsl(0, 0%, 100%);
   --off-white: hsl(0, 0%, 94%);
+  --white: hsl(0, 0%, 100%);
   --light-grey: hsl(0, 0%, 86%);
   --smokey-grey: hsl(0, 1%, 44%);
   --off-black: hsl(0, 0%, 8%);
+  --purple: hsl(259, 100%, 65%);
+  --light-red: hsl(0, 100%, 67%);
 }
 
 body {
-  min-width: 100vh;
-  min-height: 100vh;
+  background-color: var(--off-white);
+  width: 90rem;
+  height: 60rem;
+  padding: 8.25rem 17rem;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-main {
-  font-family: 'Poppins-Regular', sans-serif;
-  border: 1px solid black;
-  width: 55%;
-  height: 70vh;
-  padding: 24px;
+.container {
+  border-radius: 2rem 2rem 15rem 2rem;
+  background: #fff;
+  width: 56rem;
+  height: 43.5rem;
 }
 
-.input-section {
-  height: 25%;
-  padding: 0 1em;
+.inputs {
+  width: 35.875rem;
+  height: 5.875rem;
   display: flex;
-  justify-content: start;
-}
-
-.input-section label {
-  font-size: 1em;
-  margin: 0 0 5px 0;
-}
-
-.section {
-  margin: 0 2em 0 0;
-  display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: start;
+  align-items: center;
 }
 
-.section input {
-  padding: 10px 10px 10px 0.5em;
-  height: 0em;
-  width: 5em;
-  height: 2em;
-  font-size: 32px;
-  border-radius: 0.2em;
-  font-family: 'Poppins-Extra-Bold';
+.date input,
+.month input,
+.year input {
+  border-radius: 0.4375rem;
+  border: 1px solid rgba(113, 111, 111, 0.44);
+  background: #fff;
+  width: 10.5rem;
+  height: 4.6875rem;
+  color: #000;
+  font-family: Poppins;
+  font-size: 2rem;
+  font-style: normal;
   font-weight: 700;
-}
-
-.section input::-webkit-outer-spin-button,
-.section input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.button-section {
-  height: 15%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.results-section {
-  height: 60%;
-}
-
-.first-line {
-  border: 3px solid black;
-  height: 1px;
-  width: 90%;
+  line-height: 0rem; /* 0% */
+  letter-spacing: 0.1rem;
 }
