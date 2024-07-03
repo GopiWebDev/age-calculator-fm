@@ -7,36 +7,76 @@ const monthResult = document.querySelector('[data-month-result]');
 const dayResult = document.querySelector('[data-day-result]');
 
 button.addEventListener('click', () => {
-  //   if (
-  //     dayInput.value === '' ||
-  //     monthInput.value === '' ||
-  //     yearInput.value === ''
-  //   )
-  //     return;
-  //   checkDate(dayInput.value);
-  //   checkYear(yearInput.value);
-  checkMonth(monthInput.value);
+  if (!checkError()) return;
+
+  let year = checkYear(yearInput.value);
+  let month = checkMonth(monthInput.value);
+  let day = checkDate(dayInput.value);
+
+  if (monthInput.value > new Date().getMonth()) {
+    render(year - 1, month, day);
+  } else if (dayInput.value > new Date().getDate()) {
+    render(year, month - 1, day);
+  } else {
+    render(year, month, day);
+  }
 });
 
-function checkDate(date) {
-  if (date <= 0 || date > 31) {
+function checkYear(yearInput) {
+  let year;
+  // Year Calculation
+  if (yearInput > new Date().getFullYear()) console.log('ENTER PAST');
+  if (yearInput.length < 4 || yearInput.length > 4) console.log('INVALID YEAR');
+  else {
+    year = new Date().getFullYear() - yearInput;
+  }
+  return year;
+}
+
+function checkMonth(monthInput) {
+  let month;
+  // Month Calculation
+  let invalidMonth;
+  if (monthInput > 12 || monthInput < 1 || monthInput.length > 2) {
+    invalidMonth = true;
+    console.log('INVALID MONTH');
+  }
+  if (monthInput < new Date().getMonth() && !invalidMonth) {
+    month = new Date().getMonth() + 1 - monthInput;
+  }
+  if (monthInput > new Date().getMonth() && !invalidMonth) {
+    month = 12 + new Date().getMonth() + 1 - monthInput;
+  }
+  return month;
+}
+
+function checkDate(dateInput) {
+  let date;
+  // Date Calculation
+  if (dateInput <= 0 || dateInput > 31) {
     console.log('INVALID DATE');
-  } else {
-    console.log(new Date().getDate());
   }
+  if (dateInput < new Date().getDate() && dateInput === 0) {
+    date = new Date().getDate() - dateInput;
+  }
+  if (dateInput > new Date().getDate()) {
+    date =
+      new Date(new Date().getFullYear(), new Date().getMonth(), 0).getDate() +
+      new Date().getDate() -
+      dateInput;
+  }
+  return date;
 }
 
-function checkYear(year) {
-  if (year > new Date().getFullYear()) console.log('ENTER PAST');
-  if (year.length < 4 || year.length > 4) console.log('INVALID YEAR');
-  else {
-    yearResult.innerText = new Date().getFullYear() - year;
-  }
+function render(year, month, date) {
+  yearResult.innerText = year;
+  monthResult.innerText = month;
+  dayResult.innerText = date;
 }
 
-function checkMonth(month) {
-  if (month > 12 || month < 1) console.log('INVALID MONTH');
-  else {
-    monthResult.innerText = new Date().getMonth() + 1 - month;
-  }
+function checkError(yearInput, monthInput, dateInput) {
+  if (yearInput === '') return false;
+  if (monthInput === '') return false;
+  if (dateInput === '') return false;
+  return false;
 }
