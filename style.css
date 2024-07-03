@@ -62,8 +62,13 @@ button {
   border-radius: 50%;
   padding: 1em;
   cursor: pointer;
+  margin: 2em;
 }
 
 .results {
   font-size: 5em;
+}
+
+.error {
+  color: var(--light-red);
 }
