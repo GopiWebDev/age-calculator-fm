@@ -39,11 +39,11 @@
 
 body {
   background-color: var(--off-white);
-  padding: 10% 15%;
+  padding: 2em 10%;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
 }
 
@@ -142,3 +142,80 @@ input::placeholder {
   color: var(--purple);
 }
 
+@media (max-width: 600px) {
+  body {
+    padding: 1em;
+    margin: 0;
+  }
+  .container {
+    height: 80%;
+    width: 100%;
+    border-radius: 2rem 2rem 7em 2rem;
+    padding: 2em;
+  }
+
+  .inputs {
+    width: 100%;
+  }
+
+  .input label {
+    font-family: 'Poppins-Regular', sans-serif;
+    letter-spacing: 0.2rem;
+    color: var(--smokey-grey);
+    font-size: 10px;
+  }
+
+  .input input {
+    border: 1px solid var(--smokey-grey);
+    color: black;
+    font-family: 'Poppins-Bold';
+    height: 1.5em;
+    font-size: 0.8em;
+    padding: 1em 0.75em;
+  }
+  .input p {
+    font-family: 'Poppins-Italic', sans-serif;
+    font-size: 0.4em;
+  }
+
+  .button-line {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1em 0;
+  }
+
+  .button-line button {
+    width: 4em;
+    height: 4em;
+    border-radius: 50%;
+    background-color: var(--purple);
+    border: none;
+    cursor: pointer;
+  }
+
+  .svg {
+    width: 2.5em;
+    height: 2.5em;
+  }
+
+  .line1 {
+    border-radius: 10%;
+    background-color: var(--smokey-grey);
+    height: 2px;
+    width: 40%;
+  }
+
+  .line2 {
+    border-radius: 10%;
+    background-color: var(--smokey-grey);
+    height: 2px;
+    width: 40%;
+  }
+
+  .results {
+    margin-top: 1em;
+    font-size: 2.5em;
+  }
+}
