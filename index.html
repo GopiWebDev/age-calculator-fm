@@ -10,23 +10,34 @@
   <body>
     <main class="container">
       <div class="inputs">
-        <div class="date">
+        <div class="input">
           <label for="day">DAY</label>
-          <input data-day-input type="number" id="day" />
+          <input data-day-input type="number" id="day" placeholder="DD" />
           <p data-date-error class="error"></p>
         </div>
-        <div class="month">
+        <div class="input">
           <label for="monthData">MONTH</label>
-          <input data-month-input type="number" id="monthData" />
+          <input
+            data-month-input
+            type="number"
+            id="monthData"
+            placeholder="MM"
+          />
           <p data-month-error class="error"></p>
         </div>
-        <div class="year">
+        <div class="input">
           <label for="yearData">YEAR</label>
-          <input data-year-input type="number" id="yearData" />
+          <input
+            data-year-input
+            type="number"
+            id="yearData"
+            placeholder="YYYY"
+          />
           <p data-year-error class="error"></p>
         </div>
       </div>
       <div class="button-line">
+        <div class="line1"></div>
         <button data-submit>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -41,6 +52,7 @@
             </g>
           </svg>
         </button>
+        <div class="line2"></div>
       </div>
       <div class="results">
         <p><span data-year-result>--</span> years</p>
@@ -48,5 +60,6 @@
         <p><span data-day-result>--</span> days</p>
       </div>
     </main>
+    <div id="counter"></div>
   </body>
 </html>
